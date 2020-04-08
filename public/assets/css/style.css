@@ -1,0 +1,290 @@
+.wrapper{
+    padding: 0;
+    margin: 0;
+}
+
+.h-100vh{
+    height: 100vh;
+}
+
+/* Navbar */
+
+.navbar-brand{
+    font-weight: bold;
+}
+
+/* Banner */
+
+.banner{
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    z-index: 1;
+}
+
+.banner-beranda{
+    background-image: url(../img/someone-come-in.jpg);
+}
+
+.banner-tentang{
+    background-image: url(../img/team-work-2.jpg);
+}
+
+.banner::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.banner .banner-title{
+    color: black;
+    text-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    position: absolute;
+    font-size: 6em;
+    z-index: 1;
+}
+
+.banner .banner-img{
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+/* Button */
+
+.btn-rounded{
+    border-radius: 30px !important;
+    padding: 10px 20px;
+}
+
+
+/* play */
+
+.section-play{
+    background: linear-gradient(to right bottom, rgb(25, 91, 224), rgb(58, 131, 233));
+    background-size: cover;
+}
+
+/* Pencarian */
+
+.section-pencarian{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.section-pencarian .pencarian-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.section-pencarian .pencarian-content .pencarian-inputbox{
+    width: 80%;
+    padding: 30px 20px;
+    font-size: 40px;
+    font-weight: bold;
+    border: 0;
+    outline: none;
+}
+
+/* Icon */
+
+.icon-close{
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+.icon-close::before, .icon-close::after{
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background: #333;
+}
+
+.icon-close::before{
+    transform: rotate(45deg);
+}
+
+.icon-close::after{
+    transform: rotate(-45deg);
+}
+
+/* Big White Quote */
+.section-big-white-quote{
+    /* background: white; */
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.big-white-quote-text{
+    z-index: 1;
+}
+
+.section-big-white-quote .big-white-quote-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.section-big-white-quote .big-white-quote-bg img{
+    position: absolute;
+    z-index: 0;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+.section-big-white-quote .big-white-quote-bg img.big-white-quote-bg-one{
+    height: 60vh;
+    right: -60vh;
+    bottom: -10vh;
+}
+
+.section-big-white-quote .big-white-quote-bg img.big-white-quote-bg-two{
+    height: 55vh;
+    left: -10vh;
+    top: 10vh;
+}
+
+/* Team Card */
+
+.card-profile-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.card-profile-img .card-profile-img-cover{
+    width: 120px;
+    height: 120px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.175)!important;
+}
+
+.card-profile-img .card-profile-img-cover img{
+    margin-top: 30px;
+    height: 150%;
+}
+
+.card-profile-socmed-icon{
+    margin: 0px 20px;
+}
+.card-profile-socmed-icon:hover{
+    background: rgba(225, 224, 255, 0.5);
+}
+
+/* Text Color */
+.text-purple{
+    color: purple;
+}
+
+/* Section Statement */
+.statement-group{
+    text-align: center;
+}
+
+.statement-group .statement-img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.statement-group .statement-img img{
+    margin: 20px auto;
+    width: 40%;
+}
+
+.statement-group .statement-description{
+
+}
+
+
+
+/* Screen Media */
+
+/* Small Devices (portrait tablets and phones */
+@media only screen and (max-width: 600px){
+
+    /* Banner */
+    .banner .banner-title{
+        font-size: 4em;
+        text-align: center;
+    }
+
+    /* Big White Quote */
+    .section-big-white-quote .big-white-quote-text h1{
+        font-size: 3em;
+    }
+
+    .section-big-white-quote .big-white-quote-bg img.big-white-quote-bg-one{
+        height: 60vh;
+        right: -90vh;
+    }
+    
+    .section-big-white-quote .big-white-quote-bg img.big-white-quote-bg-two{
+        height: 35vh;
+        left: -10vh;
+    }
+
+
+    /* Text */
+    .section-title{
+        font-size: 3em !important;
+        text-align: center;
+    }
+}
+
+/* =============================================================================================== */
+/* App */
+/* =============================================================================================== */
+
+/* Section List Kelas */
+
+.list-kelas-item{
+    overflow: hidden;
+}
+
+.list-kelas-item-text{
+    z-index: 1;
+    position: relative;
+}
+
+.list-kelas-card-icon{
+    z-index: 0;
+    position: absolute;
+    left: -50px;
+    top: -40px;
+    opacity: 0.6;
+}
+
+
+/* Screen Media */
+
+/* Small Devices (portrait tablets and phones */
+@media only screen and (max-width: 600px){
+
+    
+}
