@@ -77,7 +77,7 @@
             <div class="pencarian-btn-close">
                 <a href="" onclick="closePencarian()" class="icon-close"></a>
             </div>
-            <form class="pencarian-content" method="GET">
+            <form class="pencarian-content" action="https://google.com" method="GET">
                 <input type="text" class="pencarian-inputbox" placeholder="Cari sesuatu..." name="q">
             </form>
         </div>

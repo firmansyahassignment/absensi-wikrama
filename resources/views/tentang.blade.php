@@ -13,7 +13,7 @@
         <!-- Section Big White Quote -->
         <div class="section-big-white-quote d-flex align-items-center justify-content-center py-5">
             <div class="container big-white-quote-text">
-                <h1 class="display-2">It is literally true that you can succeed best and quickest by helping others to succeed</h1>
+                <h1 class="display-2">It's literally true that you can succeed best and quickest by helping others to succeed</h1>
             </div>
             <div class="big-white-quote-bg">
                 <img src="{{ asset('assets/img/paint.jpg')}}" alt="" class="big-white-quote-bg-one wow fadeInRight">
@@ -30,7 +30,7 @@
                             <div class="card-body">
                                 <div class="card-profile-img">
                                     <div class="card-profile-img-cover">
-                                        <img src="{{ asset('assets/img/firman.jpg')}}" alt="">
+                                        <img src="{{ asset('assets/img/team.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <div class="card-profile-identity text-center mt-3">
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="card-profile-identity text-center mt-3">
                                     <h3 class="card-profile-name m-0">Irmaliani</h3>
-                                    <p class="text-muted"><small>Workflow Designer</small></p>
+                                    <p class="text-muted"><small>UI/UX Designer</small></p>
                                     <hr width="30%">
                                     <p class="mt-2 card-profile-quote">"Many of life's failures are people who did not realize how close they were to success when they gave up." &mdash; <i>Thomas A. Edison</i></p>
                                 </div>
@@ -93,7 +93,7 @@
                                     <h3 class="card-profile-name m-0">Naila Faujiah F.</h3>
                                     <p class="text-muted"><small>Creative Engineer</small></p>
                                     <hr width="30%">
-                                    <p class="mt-2 card-profile-quote">"The best and most beautiful things in the world cannot be seen or even touched; they must be felt with the heart." &mdash; <i>Hellen K.</i></p>
+                                    <p class="mt-2 card-profile-quote">"The best and most beautiful things in the world cannot be seen or even touched; they must be felt with the heart." &mdash; <i>Hellen.</i></p>
                                 </div>
                                 <div class="card-profile-socmed d-flex align-items-center justify-content-center mt-4">
                                     <div class="card-profile-socmed-icon">

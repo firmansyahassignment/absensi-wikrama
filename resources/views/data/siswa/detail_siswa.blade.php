@@ -3,10 +3,12 @@
 @section('title', 'Detail Siswa ' . $siswa->nama)
 
 @section('breadcrumb')
+@if (auth()->user()->role != '3')
 <div class="section-header-breadcrumb">
     <div class="breadcrumb-item active"><a href="{{ route($link_role.'data.siswa.daftar_siswa') }}">Daftar Siswa</a></div>
     <div class="breadcrumb-item">{{ $siswa->nama }}</div>
 </div>
+@endif
 @endsection
 
 @section('content')

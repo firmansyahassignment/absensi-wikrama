@@ -1,4 +1,4 @@
-@extends('layouts.guru')
+@extends('layouts.app')
 
 @section('title', 'Daftar Rombel')
 
@@ -14,7 +14,7 @@
                 <div class="row">
                     @foreach ($rombels->where('angkatan', $angkatan->angkatan) as $rombel)
                         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                            <a href="{{ route('guru.laporan.rombel', $rombel->id) }}">
+                            <a href="{{ route($link_role.   'laporan.rombel', $rombel->id) }}">
                                 <div class="card card-statistic-1">
                                     @switch($rombel->jurusan->short)
                                         @case("RPL")

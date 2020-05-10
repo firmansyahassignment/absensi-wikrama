@@ -3,8 +3,11 @@
 @section('title', 'Edit Siswa ' . $siswa->nama)
 
 @section('breadcrumb')
+
 <div class="section-header-breadcrumb">
+    @if (auth()->user()->role != '3')
     <div class="breadcrumb-item active"><a href="{{ route($link_role.'data.siswa.daftar_siswa') }}">Daftar Siswa</a></div>
+    @endif
     <div class="breadcrumb-item active"><a href="{{ route($link_role.'data.siswa.detail_siswa', $siswa->id) }}">Detail Siswa</a></div>
     <div class="breadcrumb-item">{{ $siswa->nama }}</div>
 </div>

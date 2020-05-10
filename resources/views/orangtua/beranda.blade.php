@@ -174,6 +174,10 @@
 <div class="card">
     <div class="card-body">
         <p><small>*Jika keterangan siswa hari ini tidak sesuai silahkan untuk menghubungi pembimbing rayon.</small></p>
+        <p>Rayon : <b>{{ $siswa->rayon->rayon }}</b></p>
+        <p>Pembimbing Rayon : <b>{{ $siswa->rayon->pembimbing->nama ?? 'Tidak ada' }}</b></p>
+        <p>Whatsapp ke : <a class="font-weight-bold" href="https://wa.me/{{ str_replace(' ', '', $siswa->rayon->pembimbing->phone) }}">{{ $siswa->rayon->pembimbing->phone ?? 'Tidak ada' }}</a></p>
+        <p>Email ke : <a class="font-weight-bold" href="mailto:{{ $siswa->rayon->pembimbing->email }}">{{ $siswa->rayon->pembimbing->email ?? 'Tidak ada' }}</a></p>
     </div>
 </div>
 @endsection

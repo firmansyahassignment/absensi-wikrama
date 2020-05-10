@@ -26,7 +26,7 @@
         <div class="section-block-quote py-5 d-flex align-items-center justify-content-center bg-primary">
             <div class="container">
                 <blockquote class="blockquote text-white">
-                    <p class="mb-0 display-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <p class="mb-0 display-4 wow fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                     <footer class="blockquote-footer text-white mt-4">Someone famous in <cite title="Source Title">Source Title</cite></footer>
                 </blockquote>
             </div>
@@ -39,7 +39,7 @@
                 <hr align="left" width="50%">
                 <div class="row mt-5">
                     <div class="col-md-4 my-3">
-                        <div class="card border-0 bg-white">
+                        <div class="card wow fadeInUp py-3 border-0 bg-white shadow" data-wow-delay="0.1s">
                             <div class="card-body">
                                 <div class="text-center mb-4">
                                     <i class="fa fa-check-circle text-success fa-lg fa-4x fa-fw" aria-hidden="true"></i>
@@ -50,10 +50,10 @@
                         </div>
                     </div>
                     <div class="col-md-4 my-3">
-                        <div class="card border-0 bg-white">
+                        <div class="card wow fadeInUp py-3 border-0 bg-white shadow-sm" data-wow-delay="0.2s">
                             <div class="card-body">
                                 <div class="text-center mb-4">
-                                    <i class="fas fa-download  text-success fa-lg fa-4x fa-fw "></i>
+                                    <i class="fas fa-download  text-dark fa-lg fa-4x fa-fw "></i>
                                 </div>
                                 <h3 class="card-title">Lorem Ipsum Dolore</h3>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nemo aut ducimus qui iste repellendus cupiditate, labore eligendi quia accusamus!</p>
@@ -61,10 +61,10 @@
                         </div>
                     </div>
                     <div class="col-md-4 my-3">
-                        <div class="card border-0 bg-white">
+                        <div class="card wow fadeInUp py-3 border-0 bg-white shadow-sm" data-wow-delay="0.2s">
                             <div class="card-body">
                                 <div class="text-center mb-4">
-                                    <i class="fas fa-folder-open  text-success fa-lg fa-4x fa-fw   "></i>
+                                    <i class="fas fa-folder-open  text-dark fa-lg fa-4x fa-fw   "></i>
                                 </div>
                                 <h3 class="card-title">Lorem Ipsum Dolore</h3>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nemo aut ducimus qui iste repellendus cupiditate, labore eligendi quia accusamus!</p>
@@ -72,10 +72,10 @@
                         </div>
                     </div>
                     <div class="col-md-4 my-3">
-                        <div class="card border-0 bg-white">
+                        <div class="card wow fadeInUp py-3 border-0 bg-white shadow-sm" data-wow-delay="0.2s">
                             <div class="card-body">
                                 <div class="text-center mb-4">
-                                    <i class="fas fa-tv  text-success fa-lg fa-4x fa-fw   "></i>
+                                    <i class="fas fa-tv  text-dark fa-lg fa-4x fa-fw   "></i>
                                 </div>
                                 <h3 class="card-title">Lorem Ipsum Dolore</h3>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nemo aut ducimus qui iste repellendus cupiditate, labore eligendi quia accusamus!</p>
@@ -83,10 +83,10 @@
                         </div>
                     </div>
                     <div class="col-md-4 my-3">
-                        <div class="card border-0 bg-white">
+                        <div class="card wow fadeInUp py-3 border-0 bg-white shadow-sm" data-wow-delay="0.3s">
                             <div class="card-body">
                                 <div class="text-center mb-4">
-                                    <i class="fas fa-users  text-success fa-lg fa-4x fa-fw   "></i>
+                                    <i class="fas fa-users  text-dark fa-lg fa-4x fa-fw   "></i>
                                 </div>
                                 <h3 class="card-title">Lorem Ipsum Dolore</h3>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nemo aut ducimus qui iste repellendus cupiditate, labore eligendi quia accusamus!</p>
@@ -94,10 +94,10 @@
                         </div>
                     </div>
                     <div class="col-md-4 my-3">
-                        <div class="card border-0 bg-white">
+                        <div class="card wow fadeInUp py-3 border-0 bg-white shadow-sm" data-wow-delay="0.4s">
                             <div class="card-body">
                                 <div class="text-center mb-4">
-                                    <i class="fas fa-exclamation-triangle  text-success fa-lg fa-4x fa-fw   "></i>
+                                    <i class="fas fa-exclamation-triangle  text-dark fa-lg fa-4x fa-fw   "></i>
                                 </div>
                                 <h3 class="card-title">Lorem Ipsum Dolore</h3>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit nemo aut ducimus qui iste repellendus cupiditate, labore eligendi quia accusamus!</p>
@@ -111,7 +111,7 @@
         <!-- Section Testimony -->
         <div class="section-testimony py-5 bg-light">
             <div class="container">
-                <h3 class="display-3 section-title">Apa Yang Mereka Katakan Tentang <br><strong><i class="fas fa-fingerprint fa-sm fa-fw"></i>ABSENSI WIKRAMA</strong>?</h3>
+                <h3 class="display-3 section-title wow fadeInLeft">Apa Yang Mereka Katakan Tentang <br><strong><i class="fas fa-fingerprint fa-sm fa-fw"></i>ABSENSI WIKRAMA</strong>?</h3>
                 <hr align="left" width="50%">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -196,27 +196,41 @@
 
         <!-- Section play -->
         <div class="section-play py-5">
+            <div class="background-absolute wow fadeInUp">
+                <div class="layout-relative">
+                    <i class="fas fa-fingerprint fa-10x"></i>
+                </div>
+                <div class="layout-relative">
+                    <i class="fas fa-fingerprint text-white fa-5x"></i>
+                </div>
+                <div class="layout-relative">
+                    <i class="fas fa-fingerprint fa-2x"></i>
+                </div>
+                <div class="layout-relative">
+                    <i class="fas fa-fingerprint fa-3x"></i>
+                </div>
+            </div>
             <div class="container text-center py-5 text-white">
-                <h3 class="display-3 section-title">Mari mulai mengabsen!</h3>
+                <h3 class="display-3 section-title wow fadeInUp">Mari mulai mengabsen!</h3>
                 @if (Route::has('login'))
                     @auth
                         @switch(Auth::user()->role)
                             @case('1')
-                                <a href="{{ url('piket-kurikulum') }}" class="btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
+                                <a href="{{ url('piket-kurikulum') }}" class="wow bounceInUp btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
                                 @break
                             @case('2')
-                                <a href="{{ url('guru') }}" class="btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
+                                <a href="{{ url('guru') }}" class="wow bounceInUp btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
                                 @break
                             @case('3')
-                                <a href="{{ url('pembimbing-rayon') }}" class="btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
+                                <a href="{{ url('pembimbing-rayon') }}" class="wow bounceInUp btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
                                 @break
                             @case('4')
-                                <a href="{{ url('orangtua') }}" class="btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
+                                <a href="{{ url('orangtua') }}" class="wow bounceInUp btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
                                 @break
                             @default
                         @endswitch
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
+                        <a href="{{ route('login') }}" class="wow bounceInUp btn btn-lg btn-light mt-4 btn-rounded"><i class="fa fa-play" aria-hidden="true"></i> Mulai</a>
                     @endauth
                 @endif
             </div>

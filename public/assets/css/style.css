@@ -67,6 +67,7 @@
 .section-play{
     background: linear-gradient(to right bottom, rgb(25, 91, 224), rgb(58, 131, 233));
     background-size: cover;
+    overflow: hidden;
 }
 
 /* Pencarian */
@@ -288,3 +289,33 @@
 
     
 }
+
+
+.background-absolute{
+    position: relative;
+}
+
+.layout-relative{
+    position: absolute;
+}
+
+.layout-relative:nth-child(1){
+    right: 20px;
+    top: 50px;
+}
+
+.layout-relative:nth-child(2){
+    left: 100px;
+    top: 200px;
+}
+
+.layout-relative:nth-child(3){
+    left: 400px;
+    top: 10px;
+}
+
+.layout-relative:nth-child(4){
+    right: 340px;
+    top: 150px;
+}
+

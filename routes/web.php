@@ -196,6 +196,32 @@ Route::middleware('pembimbing_rayon')->name('pembimbing_rayon.')->prefix('pembim
         Route::get('{id}', 'LaporkanSiswaController@detail_siswa_dilaporkan')->name('detail_siswa_dilaporkan');
     });
 
+    Route::prefix('rayon')->name('rayon.')->group(function(){
+        Route::get('/{rayon}', 'RayonController@show')->name('show');
+        Route::get('/{rayon}/absen', 'RayonController@absen')->name('absen');
+        Route::post('/{rayon}/absen', 'RayonController@simpan_absen')->name('simpan_absen');
+        Route::get('/{rayon}/laporan', 'RayonController@laporan')->name('laporan');
+    });
+
+    Route::prefix('laporan')->name('laporan.')->group(function(){
+        Route::get('/{rayon}', 'LaporanRayonController@show')->name('show');
+    });
+
+    Route::name('data.')->group(function(){
+        Route::prefix('siswa')->name('siswa.')->group(function(){
+    
+            Route::get('aktifkan-akun-orangtua', 'DataSiswaController@aktifkan_akun_orangtua')->name('aktifkan_akun_orangtua');
+            Route::get('nonaktifkan-akun-orangtua', 'DataSiswaController@nonaktifkan_akun_orangtua')->name('nonaktifkan_akun_orangtua');
+            
+            Route::get('{siswa}', 'DataSiswaController@detail_siswa')->name('detail_siswa');
+            Route::get('{siswa}/edit', 'DataSiswaController@edit_siswa')->name('edit_siswa');
+            Route::put('{siswa}/update', 'DataSiswaController@update_siswa')->name('update_siswa');
+            Route::get('{siswa}/download_pdf', 'DataSiswaController@download_pdf_siswa')->name('download_pdf_siswa');
+            Route::delete('{siswa}', 'DataSiswaController@delete_siswa')->name('delete_siswa');
+    
+        });
+    });
+
     Route::get('/pengumuman', 'PengumumanController@pengumuman')->name('pengumuman');
     Route::get('/pengumuman/{id}', 'PengumumanController@pengumuman_detail')->name('pengumuman.detail');
 

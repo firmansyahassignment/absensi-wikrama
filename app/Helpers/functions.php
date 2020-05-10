@@ -112,7 +112,9 @@ function kalkulasi_absensi($rombel, $range){
     return $rombel->absens->whereBetween('tanggal_absen', $range)->unique('tanggal_absen');
 }
 
-
+function kalkulasi_absensi_rayon($rayon, $range){
+    return $rayon->absens->whereBetween('tanggal_absen', $range)->unique('tanggal_absen');
+}
 
 
 
@@ -209,6 +211,7 @@ function data_absen(array $data)
         $absen[] = [
             'siswa_id' => $idSiswa[$i],
             'rayon_id' => Siswa::find($idSiswa[$i])->rayon_id,
+            'rombel_id' => Siswa::find($idSiswa[$i])->rombel_id,
             'keterangan' => $value[$i],
         ];
     }

@@ -28,7 +28,7 @@
                     @php
                         $no = 1;
                     @endphp
-                    @foreach ($laporkans as $item)
+                    @forelse ($laporkans as $item)
                         <tr id="row-{{ $item->siswa->id }}">
                             <td>{{ $no++ }}</td>
                             <td>{{ $item->siswa->nis ?? '' }}</td>
@@ -40,7 +40,11 @@
                                 <button class="btn btn-primary btn-md" data-laporkan="{{ $item->id }}" data-tanggal="{{ $item->tanggal_absen }}" data-id="{{ $item->siswa_id }}" data-toggle="modal" data-target="#absen_siswa">absen</button>
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td colspan="7" class="text-center"><h3 class="text-secondary">Tidak ada siswa yang dilaporkan</h3></td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>

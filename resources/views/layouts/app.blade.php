@@ -29,6 +29,11 @@
 
     <!-- Template CSS -->
     <style>body{ overflow: hidden; } .lds-ring {display: inline-block;position: relative;width: 80px;height: 80px;}.lds-ring div {box-sizing: border-box;display: block;position: absolute;width: 64px;height: 64px;margin: 8px;border: 8px solid #cdd3d8;border-radius: 50%;animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;border-color: #cdd3d8 transparent transparent transparent;}.lds-ring div:nth-child(1) {animation-delay: -0.45s;}.lds-ring div:nth-child(2) {animation-delay: -0.3s;}.lds-ring div:nth-child(3) {animation-delay: -0.15s;}@keyframes lds-ring {0% {transform: rotate(0deg);}100% {transform: rotate(360deg);}}</style>
+    <style>
+        .note-editor.note-frame.card.fullscreen{
+            z-index: 10000 !important;
+        }
+    </style>
     <link rel="stylesheet" href="{{ asset('assets/dist/css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/dist/css/components.css')}}">
 </head>
@@ -50,7 +55,7 @@
 
                     <!-- Search elemet -->
                     <div class="search-element">
-                        <input class="form-control" type="search" placeholder="Cari" aria-label="Search" data-width="250" id="search_global_keyword" onkeyup="cari_global()">
+                        <input class="form-control" type="search" placeholder="Cari" aria-label="Search" data-width="250" id="search_global_keyword" onkeyup="cari_global()" autocomplete="off">
                         <a href="#" class="btn"><i class="fas fa-search"></i></a>
                         <div class="search-backdrop"></div>
                         <div class="search-result" id="search_result">
@@ -191,15 +196,24 @@
                         
                         @if (if_role(['3'], 'AND'))
                         <!-- Rayon -->
-                        <li class="dropdown {{ request()->routeIs($link_role.'data.*') ? 'active' : '' }}">
+                        <li class="dropdown {{ request()->routeIs($link_role.'rayon.*') ? 'active' : '' }}">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-calculator"></i> <span>Rayon</span></a>
                             <ul class="dropdown-menu">
                                 @foreach ($rayons as $rayon) 
-                                <li class=""><a class="nav-link" href="">{{ $rayon->rayon }}</a></li>
+                                    <li class="{{ (request()->routeIs($link_role.'rayon.show') && request()->rayon == $rayon->id)  ? 'active' : '' }}"><a class="nav-link" href="{{ route($link_role.'rayon.show', $rayon->id) }}">{{ $rayon->rayon }}</a></li>
                                 @endforeach
                             </ul>
-                        @endif
                         </li>
+                        <!-- Rayon -->
+                        <li class="dropdown {{ request()->routeIs($link_role.'laporan.*') ? 'active' : '' }}">
+                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-file"></i> <span>Laporan</span></a>
+                            <ul class="dropdown-menu">
+                                @foreach ($rayons as $rayon) 
+                                    <li class="{{ (request()->routeIs($link_role.'laporan.show') && request()->rayon == $rayon->id)  ? 'active' : '' }}"><a class="nav-link" href="{{ route($link_role.'laporan.show', $rayon->id) }}">{{ $rayon->rayon }}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        @endif
 
                         @if (if_role(['1'], 'AND'))
                         <!-- Data -->
@@ -212,8 +226,8 @@
                                 <li class="{{ request()->routeIs($link_role.'data.rayon.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route($link_role.'data.rayon.daftar_rayon') }}">Rayon</a></li>
                                 <li class="{{ request()->routeIs($link_role.'data.jurusan.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route($link_role.'data.jurusan.daftar_jurusan') }}">Jurusan</a></li>
                             </ul>
-                        @endif
                         </li>
+                        @endif
 
                         <!-- Fitur lain -->
                         <li class="menu-header">Fitur Lain</li>

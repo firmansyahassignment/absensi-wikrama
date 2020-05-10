@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Laporan Rombel ' . $rombel->rombel)
+@section('title', 'Laporan Rayon ' . $rayon->rayon)
 
 @section('breadcrumb')
 
 <div class="section-header-breadcrumb">
-    <div class="breadcrumb-item active"><a href="{{ route($link_role . 'laporan.daftar_rombel') }}">Daftar Rombel</a></div>
-    <div class="breadcrumb-item">Laporan Rombel {{ $rombel->rombel }}</div>
+    <div class="breadcrumb-item active"><a href="{{ route($link_role . 'beranda') }}">Beranda</a></div>
+    <div class="breadcrumb-item">Laporan Rayon {{ $rayon->rayon }}</div>
 </div>
 
 @endsection
@@ -52,7 +52,7 @@
             <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Pengaturan</a>
             <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                 <li class="dropdown-title">Usaha</li>
-                <li><a href="{{ route($link_role . 'absen.rombel', $rombel->id) }}?tanggal={{ request()->tanggal_pertama ?? date('d-m-Y') }}" class="dropdown-item">Edit</a></li>
+                <li><a href="{{ route($link_role . 'rayon.absen', $rayon->id) }}?tanggal={{ request()->tanggal_pertama ?? date('d-m-Y') }}" class="dropdown-item">Edit</a></li>
 
             </ul>
         </div>
@@ -67,7 +67,7 @@
                     <th>Keterangan</th>
                 </thead>
                 <tbody class="text-center">
-                    @forelse ($rombel->siswas as $siswa)
+                    @forelse ($rayon->siswas as $siswa)
                     <tr>
                         <td>{{ $siswa->nis }}</td>
                         <td class="text-left">{{ $siswa->nama }}</td>
@@ -90,7 +90,7 @@
     
 <!-- Kalkulasi Harian Jika Pilih Range awal dan akhir -->
 
-@if (kalkulasi_absensi($rombel, range_format_db(request()->tanggal_pertama, request()->tanggal_terakhir))->count() > 0)
+@if (kalkulasi_absensi_rayon($rayon, range_format_db(request()->tanggal_pertama, request()->tanggal_terakhir))->count() > 0)
 <!-- Chart Range Absen -->
 <div class="card">
     <div class="card-body">
@@ -103,16 +103,16 @@
 <div class="card">
     <div class="card-header">
         <h4>Kalkukulasi Per Siswa</h4>
-        @if ($rombel->siswa)    
+        @if ($rayon->siswa)    
         <div class="card-header-action dropdown">
             <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Pengaturan</a>
             <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                 <li class="dropdown-title">Download</li>
                 <li>
-                    <a  class="dropdown-item" href="{{ route($link_role . 'laporan.rombel_siswa_pdf_download', $rombel) }}?tanggal_pertama={{ format_local(request()->tanggal_pertama) }}&tanggal_terakhir={{ format_local(request()->tanggal_terakhir) }}">PDF</a>
+                    {{-- <a  class="dropdown-item" href="{{ route($link_role . 'laporan.rombel_siswa_pdf_download', $rayon) }}?tanggal_pertama={{ format_local(request()->tanggal_pertama) }}&tanggal_terakhir={{ format_local(request()->tanggal_terakhir) }}">PDF</a> --}}
                 </li>
                 <li>
-                    <a  class="dropdown-item" href="{{ route($link_role . 'laporan.rombel_siswa_xl_download', $rombel) }}?tanggal_pertama={{ format_local(request()->tanggal_pertama) }}&tanggal_terakhir={{ format_local(request()->tanggal_terakhir) }}">Excel</a>
+                    {{-- <a  class="dropdown-item" href="{{ route($link_role . 'laporan.rombel_siswa_xl_download', $rayon) }}?tanggal_pertama={{ format_local(request()->tanggal_pertama) }}&tanggal_terakhir={{ format_local(request()->tanggal_terakhir) }}">Excel</a> --}}
                 </li>
 
             </ul>
@@ -133,7 +133,7 @@
                     <th></th>
                 </thead>
                 <tbody class="text-center">
-                    @forelse ($rombel->siswas as $siswa)
+                    @forelse ($rayon->siswas as $siswa)
                     <tr>
                         <td>{{ $siswa->nis }}</td>
                         <td class="text-left">{{ $siswa->nama }}</td>
@@ -177,15 +177,15 @@
                     <th></th>
                 </thead>
                 <tbody>
-                    @forelse (kalkulasi_absensi($rombel, range_format_db(request()->tanggal_pertama, request()->tanggal_terakhir)) as $item)
+                    @forelse (kalkulasi_absensi_rayon($rayon, range_format_db(request()->tanggal_pertama, request()->tanggal_terakhir)) as $item)
                     <tr class="text-center">
                         <td>{{ tanggal_bulan($item->tanggal_absen) }}</td>
-                        <td>{{ $absens->where('rombel_id', $rombel->id)->where('tanggal_absen', $item->tanggal_absen)->where('keterangan', 'masuk')->count() }}</td>
-                        <td>{{ $absens->where('rombel_id', $rombel->id)->where('tanggal_absen', $item->tanggal_absen)->where('keterangan', 'sakit')->count() }}</td>
-                        <td>{{ $absens->where('rombel_id', $rombel->id)->where('tanggal_absen', $item->tanggal_absen)->where('keterangan', 'izin')->count() }}</td>
-                        <td>{{ $absens->where('rombel_id', $rombel->id)->where('tanggal_absen', $item->tanggal_absen)->where('keterangan', 'alfa')->count() }}</td>
+                        <td>{{ $absens->where('rayon_id', $rayon->id)->where('tanggal_absen', $item->tanggal_absen)->where('keterangan', 'masuk')->count() }}</td>
+                        <td>{{ $absens->where('rayon_id', $rayon->id)->where('tanggal_absen', $item->tanggal_absen)->where('keterangan', 'sakit')->count() }}</td>
+                        <td>{{ $absens->where('rayon_id', $rayon->id)->where('tanggal_absen', $item->tanggal_absen)->where('keterangan', 'izin')->count() }}</td>
+                        <td>{{ $absens->where('rayon_id', $rayon->id)->where('tanggal_absen', $item->tanggal_absen)->where('keterangan', 'alfa')->count() }}</td>
                         <td>
-                            <a href="{{ route($link_role . 'absen.rombel', $item->rombel_id) }}?tanggal={{ format_local($item->tanggal_absen) }}" class="btn btn-sm btn-primary">edit</a>
+                            <a href="{{ route($link_role . 'rayon.absen', $item->rayon_id) }}?tanggal={{ format_local($item->tanggal_absen) }}" class="btn btn-sm btn-primary">edit</a>
                         </td>
                     </tr>
                     @empty
@@ -325,10 +325,10 @@ var statistics_chart = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(statistics_chart, {
     type: 'line',
     data: {
-        labels: [{!! html_entity_decode(date_range_absen($rombel, [request()->tanggal_pertama, request()->tanggal_terakhir])) !!}],
+        labels: [{!! html_entity_decode(date_range_absen($rayon, [request()->tanggal_pertama, request()->tanggal_terakhir])) !!}],
         datasets: [{
             label: 'Masuk',
-            data: [{{ value_range_absen($rombel, [request()->tanggal_pertama, request()->tanggal_terakhir]) }}],
+            data: [{{ value_range_absen($rayon, [request()->tanggal_pertama, request()->tanggal_terakhir]) }}],
             borderWidth: 5,
             borderColor: '#6777ef',
             backgroundColor: 'transparent',
@@ -348,7 +348,7 @@ var myChart = new Chart(statistics_chart, {
                     drawBorder: false,
                 },
                 ticks: {
-                    stepSize: {{ stepSize($rombel) }}
+                    stepSize: {{ stepSize($rayon) }}
                 }
             }],
             xAxes: [{
